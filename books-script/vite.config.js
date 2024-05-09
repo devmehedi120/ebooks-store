@@ -5,7 +5,7 @@ import { resolve } from "path";
 export default defineConfig({
   plugins: [
     react({
-      include: "***/*.jsx",
+      include: "***/*.{js,jsx,tsx,jpg}",
     }),
   ],
   root: "",
