@@ -36,6 +36,9 @@ if ( ! defined( 'WPINC' ) ) {
  * Rename this for your plugin and update it as you release new versions.
  */
 define( 'EBOOKS_STORE_VERSION', '1.0.0' );
+define( 'EBOOKS_STORE_FRAGMENT', array(
+    'absolute_url' => plugin_dir_url( __FILE__ )
+) );
 
 define('VITERJS_DEV_MOOD', true);
  add_action( "wp_enqueue_scripts", function(){
@@ -50,6 +53,9 @@ define('VITERJS_DEV_MOOD', true);
                 window.vite_plugin_react_preamble_installed = true
             </script>
 
+            <script>
+                const fragment = <?php echo json_encode(EBOOKS_STORE_FRAGMENT) ?>;
+            </script>
             <script type="module" crossorigin src="http://localhost:3000/src/main.jsx"></script>
             <?php
         } );
